@@ -1,0 +1,41 @@
+/* Interview page specific styles; relies on news.css for header/footer/base */
+:root{
+  --interview-blue:#154994;
+  --interview-accent:#218CD9;
+  --text:#444C55;
+}
+
+/* Light background with soft vignette like the screenshot */
+.interview-hero{background:linear-gradient(180deg, rgba(21,73,148,0.04) 0%, rgba(136,230,247,0.05) 30%, rgba(255,255,255,0.6) 100%)}
+.interview-header{padding:30px 0 0}
+.interview-title{font-size:52px;color:var(--interview-blue);font-weight:700;letter-spacing:2px}
+.interview-sub{font-size:18px;color:var(--interview-blue);font-weight:500;margin-top:6px}
+.interview-sub::before{content:''}
+.interview-underline{height:1px;width:100%;background:linear-gradient(to right, var(--interview-blue) 15%, #dbe3ee 85%);margin:22px 0 36px}
+
+/* Card */
+.interview-section{padding:0 0 80px}
+.interview-card{background:#fff;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.08);padding:22px 28px 36px;max-width:960px;margin:0 auto}
+
+/* Figure */
+.interview-figure{position:relative;margin:18px 0 24px}
+.interview-image{display:block;width:100%;height:auto;border-radius:2px}
+.interview-badge{position:absolute;right:14px;bottom:14px;background:#1d4899;color:#fff;font-size:12px;padding:6px 10px;border-radius:2px}
+
+/* Q&A */
+.qa{margin:18px 0}
+.q{font-size:14px;color:var(--interview-blue);font-weight:700;margin:0 0 10px}
+.qa p{font-size:13px;color:var(--text);line-height:1.9}
+
+/* Close button */
+.close-row{display:flex;justify-content:center;margin:26px 0 0}
+.close-btn{display:inline-flex;align-items:center;gap:14px;min-width:220px;justify-content:center;background:linear-gradient(180deg, #2b62b1 0%, #154994 100%);color:#fff;padding:14px 26px;border-radius:28px;box-shadow:0 8px 18px rgba(21,73,148,.25);font-weight:700}
+.close-btn:hover{filter:brightness(.97)}
+.close-arrow{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.7);}
+
+/* Responsive */
+@media (max-width: 768px){
+  .interview-title{font-size:40px}
+  .interview-card{padding:18px}
+  .close-btn{min-width:180px}
+}

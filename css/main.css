@@ -1,0 +1,93 @@
+/* Base Styles */
+body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F2F3F4;
+    color: #444C55;
+}
+
+/* Header */
+.site-header {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo {
+    height: 50px;
+}
+
+.company-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.company-name-en {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.company-type {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* Navigation */
+.top-nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.top-nav li a {
+    text-decoration: none;
+    color: #444C55;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('images/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/* Products Section */
+.products-section {
+    background-color: #FFFFFF;
+    padding: 50px 20px;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #154994;
+    color: #FFFFFF;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.site-footer::before {
+    content: 'G';
+    position: absolute;
+    bottom: -80px;
+    left: 50px;
+    font-size: 450px;
+    color: rgba(255, 255, 255, 0.03);
+}

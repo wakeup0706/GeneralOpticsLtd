@@ -1,0 +1,343 @@
+/* Products Page Specific Styles */
+body {
+    background-color: #F2F3F4;
+}
+
+.breadcrumb {
+    padding: 15px 0;
+    background-color: #FFF;
+    border-bottom: 1px solid #EEE;
+    font-size: 14px;
+    color: #444C55;
+}
+
+.breadcrumb a {
+    color: #154994;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.products-section {
+    padding: 60px 0;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #FFFFFF, #F2F3F4);
+}
+
+.section-title {
+    font-size: 48px;
+    color: #154994;
+    font-weight: bold;
+    margin: 0;
+}
+
+.section-subtitle {
+    font-size: 24px;
+    color: #154994;
+    margin: 0 0 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-subtitle::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #218CD9;
+    border-radius: 50%;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-item {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    padding: 20px;
+    text-align: left;
+    transition: border-color 0.3s;
+}
+
+.product-item:hover {
+    border-color: #218CD9;
+}
+
+.product-image {
+    background-color: #F2F3F4;
+    margin-bottom: 15px;
+    padding: 20px;
+    border: 1px solid #E0E0E0;
+}
+
+.product-image img {
+    width: 100%;
+    display: block;
+}
+
+.product-name {
+    font-size: 18px;
+    color: #154994;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #444C55;
+    line-height: 1.6;
+}
+
+.contact-section {
+    padding: 60px 0;
+    background-color: #F2F3F4;
+    text-align: center;
+}
+
+.contact-subtitle {
+    font-size: 18px;
+    color: #444C55;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.contact-subtitle::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #218CD9;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.contact-title {
+    text-align: center;
+    font-size: 48px;
+    color: #154994;
+    font-weight: bold;
+    margin: 10px 0 30px;
+}
+
+.contact-box {
+    background-color: #FFFFFF;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contact-box p {
+    font-size: 16px;
+    color: #444C55;
+    margin-bottom: 30px;
+}
+
+.contact-options {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.email-btn {
+    background-color: #154994;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    font-size: 20px;
+    flex: 1;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.email-btn:hover {
+    background-color: #0D3A7A;
+}
+
+.email-btn span {
+    display: flex;
+    align-items: center;
+}
+
+.mail-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+.arrow {
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    margin-left: 60px;
+}
+
+.phone-contact {
+    background-color: #EAF4FB;
+    color: #154994;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #218CD9;
+}
+
+.phone-contact p {
+    margin: 0;
+    color: #154994;
+}
+
+.phone-number {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.phone-hours {
+    font-size: 14px;
+}
+
+.to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: #FFFFFF;
+    border: 2px solid #154994;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease-in-out;
+    color: #154994;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.to-top:hover {
+    background-color: #154994;
+    color: #FFFFFF;
+}
+
+.to-top-arrow {
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #154994;
+    border-left: 3px solid #154994;
+    transform: rotate(45deg) translateY(2px);
+    margin-bottom: 5px;
+    transition: border-color 0.3s;
+}
+
+.to-top:hover .to-top-arrow {
+    border-color: #FFFFFF;
+}
+
+/* Footer adjustments */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.site-footer {
+    background-color: #154994;
+    color: #FFFFFF;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+.company-info .footer-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+.company-info p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 20px 40px;
+    max-width: 600px;
+}
+.footer-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+}
+.copyright-bar {
+    background-color: #0D3A7A;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+.copyright-bar p {
+    margin: 0;
+    font-size: 12px;
+}
+.privacy-policy {
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+.privacy-policy::after {
+    content: ' \2794'; /* Unicode arrow */
+    font-size: 12px;
+    margin-left: 5px;
+}
