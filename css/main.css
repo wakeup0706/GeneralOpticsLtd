@@ -7,59 +7,79 @@ body {
     color: #444C55;
 }
 
-/* Header */
+/* Header (shared across all pages) */
 .site-header {
     background-color: #FFFFFF;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    position: -webkit-sticky;
 }
 
+/* container for nav; note: the logo and recruit button are positioned outside via absolute */
 .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* push nav to the right side of the container */
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 15px 0;
+    /* reserve space for the absolutely positioned recruit button */
+    padding-right: 160px;
 }
 
-.logo {
+/* Logo block flush-left of the page (outside centered container) */
+.site-header { position: relative; }
+.logo-outside {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
-
-.header-logo {
-    height: 50px;
-}
-
-.company-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-}
-
-.company-name-en {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.company-type {
-    font-size: 12px;
-    font-weight: 400;
-}
+.logo-outside a { display: flex; align-items: center; gap: 12px; }
+.header-logo-icon { height: 45px; width: auto; }
+.company-text { display: flex; flex-direction: column; line-height: 1.2; }
+.company-name-en { font-size: 13px; font-weight: 500; }
+.company-type { font-size: 11px; font-weight: 400; }
 
 /* Navigation */
-.top-nav ul {
-    display: flex;
-    gap: 20px;
-}
-
+.top-nav ul { display: flex; gap: 0; }
 .top-nav li a {
-    text-decoration: none;
-    color: #444C55;
+    display: block;
+    padding: 10px 20px;
     font-size: 14px;
+    color: #444C55;
+    position: relative;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
+.top-nav li a::after {
+    content: '';
+    position: absolute; left: 50%; bottom: 5px; transform: translateX(-50%);
+    width: 0; height: 3px; background-color: #154994; transition: width 0.3s ease;
+}
+.top-nav li a:hover, .top-nav li a.active { color: #154994; }
+.top-nav li a:hover::after, .top-nav li a.active::after { width: 70%; }
+
+/* Recruit button pinned to the far right of the header */
+.recruit-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #218CD9;
+    color: #FFFFFF;
+    padding: 12px 25px;
+    border-radius: 3px;
+    font-size: 14px;
+    white-space: nowrap;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+.recruit-btn:hover { background-color: #154994; }
 
 /* Hero Section */
 .hero-section {
@@ -90,4 +110,12 @@ body {
     left: 50px;
     font-size: 450px;
     color: rgba(255, 255, 255, 0.03);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-content { justify-content: space-between; padding-right: 0; flex-wrap: wrap; }
+    .logo-outside { position: static; transform: none; padding-left: 0; margin-bottom: 8px; }
+    .top-nav ul { flex-wrap: wrap; gap: 12px; }
+    .recruit-btn { position: static; transform: none; margin-left: 8px; margin-top: 6px; }
 }

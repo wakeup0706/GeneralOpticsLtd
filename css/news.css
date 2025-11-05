@@ -51,11 +51,44 @@ ul {
     z-index: 10;
 }
 
+/* header layout: logo sits flush to the left edge (outside centered container)
+   the container (.header-content) keeps nav aligned towards the right,
+   and the recruit button is pinned to the far right of the page */
+.site-header { position: relative; }
+
 .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* keep nav on the right side of the centered container */
     align-items: center;
     padding: 15px 0;
+    padding-right: 160px; /* reserve room so nav doesn't collide with the absolute recruit button */
+}
+
+/* logo element placed outside the centered container so it can be flush-left */
+.logo-outside {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* make the anchor a flex container so image and company text sit side-by-side */
+.logo-outside a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* pin the recruit button to the far right edge of the viewport */
+.recruit-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .logo a {
@@ -439,8 +472,9 @@ ul {
 
 /* === 3. Footer === */
 .site-footer {
+    /* Solid main blue as requested */
     background-color: #154994;
-    background: linear-gradient(to bottom, #154994 0%, #0d3566 100%);
+    background: #154994;
     color: var(--color-white);
     padding-top: 50px;
     position: relative;
@@ -558,55 +592,70 @@ ul {
 /* Back to Top Button */
 .back-to-top-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
+    bottom: 22px;
+    right: 22px;
+    width: 58px;
+    height: 58px;
     background-color: var(--color-main);
     color: var(--color-white);
     border-radius: 50%;
-    text-align: center;
-    line-height: 60px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
     font-size: 12px;
     font-weight: 700;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    z-index: 100;
-    transition: all 0.3s;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+    z-index: 120;
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
 }
 
-.back-to-top-btn:hover {
-    background-color: #0d3870;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
+.back-to-top-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.28); }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* make header elements flow naturally on small screens */
     .header-content {
         flex-wrap: wrap;
+        justify-content: space-between;
+        padding-right: 0; /* no need to reserve space on small screens */
     }
-    
+
+    .logo-outside {
+        position: static;
+        transform: none;
+        padding-left: 0;
+        margin-bottom: 8px;
+    }
+
     .top-nav ul {
         flex-wrap: wrap;
+        gap: 12px;
     }
-    
+
+    .recruit-btn {
+        position: static;
+        transform: none;
+        margin-left: 8px;
+        margin-top: 6px;
+    }
+
     .contact-card {
         flex-direction: column;
         gap: 30px;
         padding: 40px 30px;
     }
-    
+
     .contact-buttons {
         flex-direction: column;
         gap: 20px;
         width: 100%;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: 30px;
     }
-    
+
     .footer-nav ul {
         margin-left: 0;
     }
