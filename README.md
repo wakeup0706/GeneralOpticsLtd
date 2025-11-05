@@ -1,4 +1,4 @@
-# General Optics Ltd – Static Website
+# General Optics Ltd –Website
 
 This repository contains a static multi‑page website for General Optics Ltd. Pages are linked and share a consistent header, footer, color palette, and contact CTA.
 
