@@ -13,29 +13,41 @@
 .privacy-title-en{
     font-family: 'Zen Kaku Gothic New', sans-serif;
     color:var(--main);
-    font-size:44px;
+    font-size:52px;
     margin:0 0 6px 0;
-    letter-spacing:1px;
+    letter-spacing:2px;
+    font-weight:800;
 }
 .privacy-sub{
     color:var(--text);
     font-size:14px;
     margin:0 0 18px 0;
+    font-weight:500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.privacy-dot{
+    color:var(--main);
+    font-size:16px;
+    line-height:1;
+    position: relative;
+    top: -1px;
 }
 .privacy-underline{
     height:2px;
-    background:linear-gradient(90deg,var(--main),var(--accent));
+    background:linear-gradient(90deg,var(--main) 20%,#ddd 80%);
     width:100%;
     max-width:960px;
     margin-top:12px;
 }
 
 .privacy-content{ background:transparent; padding:36px 0 80px; }
-.policy-body{ max-width:880px; margin:24px auto; color:var(--text); font-size:14px; line-height:1.9; }
-.policy-heading{ font-size:20px; color:#2f404f; margin:18px 0; font-weight:700; }
-.policy-body h3{ font-size:16px; margin:14px 0 8px; color:#2f404f; font-weight:700; }
+.policy-body{ max-width:880px; margin:24px auto; color:var(--text); font-size:15px; line-height:2; }
+.policy-heading{ font-size:28px; color:var(--text); margin:30px 0; font-weight:800; letter-spacing:.5px; }
+.policy-body h3{ font-size:18px; margin:28px 0 14px; color:var(--text); font-weight:800; letter-spacing:.5px; }
 .policy-body p{ margin:8px 0 18px; color:var(--text); }
-.policy-list{ margin:8px 0 18px 20px; }
+.policy-list{ margin:12px 0 24px 20px; list-style:none; }
 .policy-list li{ margin:6px 0; }
 .links-list{ margin:12px 0 20px 20px; }
 .links-list li{ margin:6px 0; }
@@ -48,6 +60,8 @@
 .back-to-top-btn{ position:fixed; right:24px; bottom:24px; background:var(--main); color:#fff; padding:10px 14px; border-radius:26px; text-decoration:none; box-shadow:0 6px 12px rgba(0,0,0,.18); }
 
 @media (max-width:800px){
-    .privacy-title-en{ font-size:32px; }
+    .privacy-title-en{ font-size:40px; }
+    .policy-heading{ font-size:24px; margin:26px 0; }
+    .policy-body h3{ font-size:17px; margin:24px 0 12px; }
     .policy-body{ padding:0 18px; }
 }

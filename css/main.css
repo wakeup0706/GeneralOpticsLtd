@@ -1,10 +1,14 @@
 /* Base Styles */
+html, body { height: 100%; }
 body {
     font-family: 'Zen Kaku Gothic New', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F2F3F4;
     color: #444C55;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header (shared across all pages) */
@@ -95,21 +99,165 @@ body {
     padding: 50px 20px;
 }
 
+/* Back to Top Button (match reference) */
+.back-to-top-btn {
+    /* position set when placed inside footer */
+    width: 60px;
+    height: 60px;
+    background-color: #154994; /* deep navy */
+    border: 3px solid #FFFFFF; /* thin bright ring */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 12px; /* TOP text */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    /* Use a subtle drop shadow and an outline so we don't extend the page height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.28);
+    outline: 5px solid rgba(255, 255, 255, 0.25);
+    outline-offset: 0;
+    z-index: 3;
+}
+
+/* Upward arrow above TOP text */
+.back-to-top-btn::before { 
+    content: '\2191'; /* ↑ */
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.back-to-top-btn:hover { filter: brightness(1.05); }
+
+/* Pin the TOP button to the footer's top-right and make it overlap slightly */
+.site-footer { position: relative; }
+.site-footer .back-to-top-btn {
+    position: absolute;
+    right: 22px;
+    top: -30px; /* center of the 60px circle sits exactly on the section boundary */
+}
+
 /* Footer */
 .site-footer {
     background-color: #154994;
     color: #FFFFFF;
     padding: 50px 20px;
     position: relative;
+    margin-top: auto; /* ensure footer pins to bottom when page content is short */
+    overflow: visible; /* allow TOP button to overlap above footer */
 }
 
 .site-footer::before {
     content: 'G';
     position: absolute;
-    bottom: -80px;
+    bottom: 0; /* avoid extending below footer to prevent extra page space */
     left: 50px;
     font-size: 450px;
     color: rgba(255, 255, 255, 0.03);
+    z-index: 1;
+}
+
+/* Safety overlay: extend footer color a few pixels beyond the bottom
+   to mask any sub-pixel gaps from device rounding/zoom */
+.site-footer::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -26px; /* overlap into page background */
+    height: 26px;
+    background-color: #154994;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 0;
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-logo-g {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.company-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.company-address,
+.company-tel-fax {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.footer-nav ul {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 0.8;
+}
+
+.copyright-bar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.privacy-policy {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.privacy-policy::after {
+    content: '□';
+    font-size: 10px;
+}
+
+.copyright {
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0;
 }
 
 /* Responsive adjustments */
@@ -118,4 +266,10 @@ body {
     .logo-outside { position: static; transform: none; padding-left: 0; margin-bottom: 8px; }
     .top-nav ul { flex-wrap: wrap; gap: 12px; }
     .recruit-btn { position: static; transform: none; margin-left: 8px; margin-top: 6px; }
+    .back-to-top-btn { width: 56px; height: 56px; font-size: 11px; }
+    .back-to-top-btn::before { width: 10px; height: 10px; }
+    .back-to-top-btn::after { height: 12px; margin-top: -7px; }
 }
+
+/* Make the main content take available space so footer sticks to bottom */
+main { flex: 1 0 auto; }
