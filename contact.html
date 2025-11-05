@@ -56,11 +56,15 @@
     <!-- phone card -->
     <section class="phone-section">
       <div class="container">
-        <div class="phone-card">
+        <div class="phone-card" role="region" aria-label="電話でのお問い合わせ">
           <p class="phone-lead">お電話でのお問い合わせ</p>
           <div class="phone-line">
-            <span class="phone-icon">📞</span>
-            <a href="tel:0187873322" class="phone-number">0187-87-3322</a>
+            <span class="phone-icon" aria-hidden="true">
+              <svg class="phone-svg" width="40" height="40" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.654 1.328a.678.678 0 0 1 1.015-.063l2.29 2.29c.329.329.445.81.29 1.234l-.688 1.876a.678.678 0 0 0 .168.706l2.457 2.457a.678.678 0 0 0 .706.168l1.876-.688a1.745 1.745 0 0 1 1.234.29l2.29 2.29a.678.678 0 0 1-.063 1.015l-1.745 1.745c-.58.58-1.482.678-2.163.23-1.78-1.15-3.63-2.9-5.146-4.417C4.781 8.56 3.03 6.71 1.879 4.93c-.448-.68-.35-1.583.23-2.163L3.654 1.328z"/>
+              </svg>
+            </span>
+            <a href="tel:0187873322" class="phone-number" aria-label="電話番号 0187-87-3322">0187-87-3322</a>
             <span class="phone-hours">（平日 8:00〜17:00）</span>
           </div>
         </div>
@@ -104,15 +108,14 @@
             <input class="input" type="tel" name="tel" required value="0123-45-6789">
           </div>
 
-          <div class="form-row inline">
-            <div class="inline-col">
-              <label class="form-label">郵便番号</label>
-              <input class="input" type="text" name="zip" value="012-3456">
-            </div>
-            <div class="inline-col flex">
-              <label class="form-label">住所</label>
-              <input class="input" type="text" name="addr" value="秋田県美郷町○○町○○○-○-2-3">
-            </div>
+          <div class="form-row">
+            <label class="form-label">郵便番号</label>
+            <input class="input" type="text" name="zip" value="012-3456">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">住所</label>
+            <input class="input" type="text" name="addr" value="秋田県美郷町○○町○○○-○-2-3">
           </div>
 
           <div class="form-row">
