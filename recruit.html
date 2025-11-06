@@ -41,25 +41,24 @@
   </header>
 
   <main>
-    <div class="container breadcrumb"><a href="index.html">TOP</a> &gt; 採用情報</div>
+  <!-- breadcrumb will be overlaid on the hero image -->
 
     <!-- HERO -->
     <section class="recruit-hero">
       <div class="hero-bg"></div>
+      <div class="breadcrumb on-hero"><a href="index.html">TOP</a> &gt; 採用情報</div>
       <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="script">Let's Get</p>
-          <p class="script second">The Beginning</p>
-        </div>
-        <div class="hero-text">
-          <p class="kicker">採用メッセージ</p>
-          <h1>精密が、未来をつくる。</h1>
-          <p>カメラやセンサー、医療や宇宙まで。私たちの手しごとは、
-            見えないところで世界の技術を支えています。<br>
-            こだわりと誇りを胸に、次の一歩を一緒に。</p>
+        <div class="hero-content">
+          <!--<p class="hero-eyebrow">キャッチコピー</p> -->
+          <h1 class="hero-title">採用情報</h1>
         </div>
       </div>
     </section>
+
+    <!-- Script overlay between HERO and MESSAGE (decorative) -->
+    <div class="hero-script-overlay" aria-hidden="true">
+      <img src="images/recruitkv-parts.png" alt="" loading="lazy" />
+    </div>
 
     <!-- MESSAGE -->
     <section class="recruit-message">
@@ -71,12 +70,9 @@
         <div class="msg-text">
           <p class="section-kicker">採用メッセージ</p>
           <h2 class="section-en">RECRUITING MESSAGE</h2>
-          <p>
-            私たちは、光学結晶と薄膜技術の専門家集団。磨く、測る、蒸着する——
-            積み重ねた技能が、世界に誇れる品質を生み出します。<br>
-            「誠実に、丁寧に、まっすぐに」。その姿勢を大切にしながら、
-            人と技術を育てています。
-          </p>
+          <p>ゼネラルオプティックス株式会社 は、光学レンズ加工を専門とする会社です。国内の光学メーカーの協力会社として、確かな技術力を武器に事業を展開しています。</p>
+          <p>国内はもちろん、アメリカやヨーロッパなど海外にもサービスを提供し、常に最高品質の製品づくりを追求しています。</p>
+          <p>当社では、さらなる体制強化のため新たな仲間を募集しています。 未経験の方でも丁寧に育成しますので、安心してスタートできます。 "秋田で安定して働きたい"“ものづくりの世界に挑戦したい”という方、ぜひ私たちと一緒に成長していきましょう！</p>
         </div>
       </div>
     </section>
@@ -86,14 +82,15 @@
       <div class="container">
         <p class="section-kicker">私たちの仕事</p>
         <h2 class="section-en">OUR WORKS</h2>
-        <div class="lead-box">
-          <h3>「光」を磨き、世界の暮らしへ貢献する。</h3>
-          <p>
-            顕微鏡、カメラ、車載センサー、そして宇宙分野へ。<br>
-            ジェネラルオプティクスは、光学レンズの切削・研磨・蒸着・検査までを
-            一貫して担うメーカーです。見えないほどの精密さを追い、
-            社会に役立つ製品をお届けしています。
-          </p>
+        <div class="lead-grid">
+          <div class="lead-left">
+            <h3 class="lead-jp">目には見えない「光」を操り、<br>社会の土台を創る</h3>
+          </div>
+          <div class="lead-right">
+            <h4 class="lead-quote">「もし、光を自由自在に操ることができたら？」</h4>
+            <p>スマートフォン、インターネット、医療、モノづくり…。現代社会を支える無数のテクノロジーの多くは、「光をどう操るか」という技術が基盤を作っています。</p>
+            <p>私たちの仕事は、その鍵となる「光の部品」を創り出すこと。普段は目に触れない小さな部品ですが、それがなければ世界は動かなくなる。そんな、社会の根幹を支える誇り高い仕事です。</p>
+          </div>
         </div>
       </div>
       <div class="swoosh" aria-hidden="true"></div>
@@ -209,60 +206,72 @@
     <!-- ENTRY FORM -->
     <section id="entry" class="entry">
       <div class="container">
-        <h2 class="section-en">エントリーフォーム</h2>
-        <p class="entry-note">必要事項をご入力ください。送信後、担当よりご連絡いたします。</p>
         <form class="entry-form" action="#" method="post" novalidate>
-          <div class="field two">
-            <label for="name">お名前</label>
-            <input id="name" name="name" type="text" required />
-            <label for="kana">フリガナ</label>
-            <input id="kana" name="kana" type="text" required />
+          <div class="form-head">
+            <h2 class="form-title">エントリーフォーム</h2>
+            <p class="form-desc">採用係宛へのご応募は下記のエントリーフォームよりお願いします。<br>内容を確認後、担当よりご連絡させていただきます。</p>
           </div>
 
           <div class="field two">
+            <label for="name">お名前 <span class="req">必須</span></label>
+            <input id="name" name="name" type="text" placeholder="松田 一郎" required />
+            <label for="kana">フリガナ <span class="req">必須</span></label>
+            <input id="kana" name="kana" type="text" placeholder="サトウ イテロウ" required />
+          </div>
+
+          <div class="field two">
+            <label for="position">希望職種 <span class="req">必須</span></label>
+            <input id="position" name="position" type="text" placeholder="明仁勤勉工" required />
             <label>性別</label>
             <div class="radios">
-              <label><input type="radio" name="gender" value="male" /> 男性</label>
-              <label><input type="radio" name="gender" value="female" /> 女性</label>
-              <label><input type="radio" name="gender" value="other" /> その他</label>
+              <label><input type="radio" name="gender" value="male"/> 男性</label>
+              <label><input type="radio" name="gender" value="female"/> 女性</label>
             </div>
-            <label for="birth">生年月日</label>
-            <input id="birth" name="birth" type="date" />
           </div>
 
           <div class="field two">
-            <label for="email">メールアドレス</label>
-            <input id="email" name="email" type="email" required />
-            <label for="tel">電話番号</label>
-            <input id="tel" name="tel" type="tel" />
+            <label>工場見学の希望</label>
+            <div class="radios">
+              <label><input type="radio" name="visit" value="yes"/> 希望する</label>
+              <label><input type="radio" name="visit" value="no"/> 希望しない</label>
+            </div>
+            <label for="age">年齢</label>
+            <input id="age" name="age" type="number" min="0" inputmode="numeric" placeholder="20" />
           </div>
 
-          <div class="field one">
+          <div class="field two">
+            <label for="email">メールアドレス <span class="req">必須</span></label>
+            <input id="email" name="email" type="email" placeholder="tanrpk@gpmetcogit.com" required />
+            <label for="tel">電話番号 <span class="req">必須</span></label>
+            <input id="tel" name="tel" type="tel" placeholder="092-45-079" required />
+          </div>
+
+          <div class="field two">
+            <label for="zip">郵便番号</label>
+            <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="095-568" />
             <label for="address">住所</label>
-            <input id="address" name="address" type="text" />
+            <input id="address" name="address" type="text" placeholder="駐園周大仙町○○町○○○○1-3-3" />
           </div>
 
           <div class="field one">
-            <label for="education">学歴・職歴</label>
-            <textarea id="education" name="education" rows="4"></textarea>
+            <label for="career">直前・現在の職歴</label>
+            <input id="career" name="career" type="text" placeholder="明仁生産管理" />
           </div>
 
           <div class="field one">
-            <label for="motivation">志望動機・自己PR</label>
-            <textarea id="motivation" name="motivation" rows="5"></textarea>
+            <label for="motivation">自己HP・その他ご要望など</label>
+            <textarea id="motivation" name="motivation" rows="8" placeholder="自己HP・その他ご要望などありましたら、ご自由にご記入ください。"></textarea>
           </div>
-
-          <div class="field agree">
-            <label class="checkbox">
-              <input type="checkbox" id="agree" required />
-              <span>個人情報の取扱いに同意します</span>
-            </label>
-          </div>
-
           <div class="center">
-            <button type="submit" class="submit">送 信</button>
+            <button type="submit" class="submit-pill">送信する <span class="arrow">→</span></button>
           </div>
         </form>
+        <div class="privacy-consent">
+          <label class="checkbox">
+            <input type="checkbox" id="agree" required />
+            <span><a href="privacy.html">プライバシーポリシー</a>に同意します</span>
+          </label>
+        </div>
       </div>
       <div class="glass-bg" aria-hidden="true"></div>
     </section>

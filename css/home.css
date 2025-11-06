@@ -81,14 +81,20 @@ img{max-width:100%; display:block}
 .section-hd .dot{color:var(--color-accent)}
 .section-hd .en{font-weight:800; font-size:28px; letter-spacing:.08em; color:var(--color-text-dark)}
 .section-hd .ja{color:#8aa1c1}
-.products-grid{margin-top:24px; display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
-.product{display:block; background:#fff; border:1px solid #e6eef8; border-radius:6px; padding:10px; color:var(--color-text-dark); text-decoration:none; box-shadow:0 1px 0 rgba(0,0,0,.02)}
-.product img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:4px; background:#f5f8fc}
-.product p{margin:.5rem 0 0; font-size:12px; text-align:center; color:var(--color-text-dark)}
-.section-cta{display:flex; justify-content:center; margin-top:16px}
-.btn{display:inline-flex; align-items:center; gap:8px; padding:.8rem 1.6rem; border-radius:999px; text-decoration:none; font-weight:600}
-.btn.arrow{background:var(--color-main); color:#fff}
-.btn.arrow::after{content:'\2192'}
+.products-grid{margin-top:24px; display:grid; grid-template-columns:repeat(3, 1fr); gap:22px}
+/* Product tiles match the reference: only the image with a tiny blue offset shadow and a blue caption */
+.products-card .product{display:block; background:transparent; border:0; border-radius:0; padding:0; color:var(--color-text-dark); text-decoration:none}
+.products-card .product img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; background:#f5f8fc; border:1px solid #d8e6f8; box-shadow:-12px 10px 0 0 #c7d6ef}
+.products-card .product p{margin:.55rem 0 0; font-size:12px; text-align:center; color:var(--color-text-blue); font-weight:700}
+.section-cta{display:flex; justify-content:center; margin-top:18px}
+/* Pill CTA to match screenshot (shared look with NEWS pill, but tuned for products size) */
+.products-card .section-cta .pill{position:relative; display:inline-flex; align-items:center; justify-content:center; gap:0; 
+  padding:16px 64px; min-width:280px; border-radius:999px; color:#fff; text-decoration:none; font-weight:800;
+  background:linear-gradient(180deg,#1d56a5 0%, #103e86 100%);
+  box-shadow:0 12px 24px rgba(16,62,134,.25), 0 0 0 3px rgba(158,180,206,.65), 0 0 0 6px rgba(16,62,134,.08);
+}
+.products-card .section-cta .pill:hover{filter:none; background:linear-gradient(180deg,#2261b5 0%, #114991 100%)}
+.products-card .section-cta .pill .arrow{position:absolute; right:22px; display:grid; place-items:center; width:36px; height:36px; border-radius:50%; border:2px solid rgba(255,255,255,.92); color:#fff; font-size:20px}
 
 /* Duo cards */
 .duo-cards{padding:12px 0 8px; position:relative; z-index:2; margin-top:-60px}
@@ -117,26 +123,41 @@ img{max-width:100%; display:block}
 /* News */
 .news{padding:46px 0}
 /* Two-column layout with left visual and right list */
-.home-news{position:relative; background:linear-gradient(180deg, #eef4fb 0%, #ffffff 70%)}
-.news-inner{display:grid; grid-template-columns: minmax(220px, 1fr) 1.6fr; gap:24px; align-items:start}
+/* Give the NEWS block a little extra top room so it clears the recruit section artwork */
+.home-news{position:relative; background:linear-gradient(180deg, #eef4fb 0%, #ffffff 70%); padding-top:120px}
+/* soft diagonal highlight so items sit on the page background (no white cards) */
+.home-news::before{content:""; position:absolute; inset:0; pointer-events:none; z-index:0; background:
+  linear-gradient(135deg, rgba(21,73,148,0.05) 8%, rgba(255,255,255,0.25) 35%, rgba(255,255,255,0.35) 55%, rgba(255,255,255,0.25) 80%),
+  radial-gradient(540px 300px at 95% 8%, rgba(33,140,217,.08), transparent 70%)}
+.news-inner{display:grid; grid-template-columns: 320px 1fr; gap:16px; align-items:start}
 .news-left{position:relative}
 .news-kicker{margin:0 0 2px; color:var(--color-text-blue); font-size:12px}
-.news-inner .en{font-size:28px; font-weight:800; color:var(--color-text-blue); letter-spacing:.04em}
+.news-inner .en{font-size:36px; font-weight:800; color:var(--color-text-blue); letter-spacing:.04em}
 .news-visual{position:relative; margin-top:14px; height:220px}
-.news-visual .ring3d{position:absolute; left:0; bottom:0; width:180px; height:auto; filter:drop-shadow(0 22px 28px rgba(0,0,0,.18)); opacity:.95}
+/* Lens: a bit smaller and sits slightly lower to match the reference */
+.news-visual .ring3d{position:absolute; left:-44px; bottom:-80px; width:160px; height:auto; filter:drop-shadow(0 22px 28px rgba(0,0,0,.22)); opacity:.98}
 
 /* Right list */
-.news-list{list-style:none; padding:0; margin:24px 0 8px; display:flex; flex-direction:column; gap:8px}
-.news-item{display:grid; grid-template-columns:auto 1fr auto; gap:16px; align-items:center; padding:14px 12px; background:#fff; border-radius:10px; text-decoration:none; color:var(--color-text-dark); box-shadow:0 10px 22px rgba(17,58,119,.08)}
-.news-item .date{color:#7d8da3; font-size:12px; letter-spacing:.02em; min-width:86px}
-.news-item .texts{display:flex; flex-direction:column; gap:2px}
-.news-item .texts .title{font-weight:700; margin:0; color:var(--color-text-dark)}
-.news-item .texts .sub{margin:0; color:#6b7a8f; font-size:13px}
-.circle-btn{display:grid; place-items:center; width:36px; height:36px; border-radius:50%; border:2px solid var(--color-main); color:var(--color-main); font-weight:800; background:#fff}
-.news-item:hover .circle-btn{background:var(--color-main); color:#fff}
-.news-more{display:flex; justify-content:flex-end; margin-top:8px}
-.news-more .pill{display:inline-flex; align-items:center; gap:10px; padding:10px 22px; border-radius:999px; color:#fff; text-decoration:none; background:var(--color-main); box-shadow:0 10px 20px rgba(17,58,119,.22)}
-.news-more .pill .arrow{display:inline-grid; place-items:center; width:22px; height:22px; border-radius:50%; border:2px solid rgba(255,255,255,.7)}
+.home-news .news-list{list-style:none; padding:0; margin:10px 0 16px; display:flex; flex-direction:column; gap:0; position:relative; z-index:1}
+/* float items on the section background: no white card; use thin blue dividers */
+.home-news .news-item{display:grid; grid-template-columns:auto 1fr auto; gap:16px; align-items:center; padding:18px 8px; background:transparent; border-radius:0; text-decoration:none; color:var(--color-text-dark); box-shadow:none; border-bottom:1px solid #cfe2f6}
+.home-news .news-item:first-child{border-top:1px solid #cfe2f6}
+.home-news .news-item:hover{background-color:rgba(33,140,217,0.02)}
+.home-news .news-item .date{color:#7d8da3; font-size:13px; letter-spacing:.02em; min-width:100px}
+.home-news .news-item .texts{display:flex; flex-direction:column; gap:2px}
+.home-news .news-item .texts .title{font-weight:700; margin:0; color:var(--color-text-dark); font-size:16px}
+.home-news .news-item .texts .sub{margin:0; color:#6b7a8f; font-size:14px}
+.home-news .circle-btn{display:grid; place-items:center; width:40px; height:40px; border-radius:50%; border:2px solid #aac3e5; color:var(--color-main); font-weight:800; background:transparent}
+.home-news .news-item:hover .circle-btn{background:var(--color-main); color:#fff; border-color:var(--color-main)}
+.home-news .news-more{display:flex; justify-content:flex-end; margin-top:14px}
+/* Button style to match the reference: deep blue pill, light-blue ring, centered text, hollow arrow circle on the right */
+.home-news .news-more .pill{position:relative; display:inline-flex; align-items:center; justify-content:center; gap:0; 
+  padding:18px 68px; min-width:320px; border-radius:999px; color:#fff; text-decoration:none; font-weight:800;
+  background:linear-gradient(180deg,#1d56a5 0%, #103e86 100%);
+  box-shadow:0 12px 24px rgba(16,62,134,.25), 0 0 0 3px rgba(158,180,206,.65), 0 0 0 6px rgba(16,62,134,.08);
+}
+.home-news .news-more .pill:hover{filter:none; background:linear-gradient(180deg,#2261b5 0%, #114991 100%)}
+.home-news .news-more .pill .arrow{position:absolute; right:22px; display:grid; place-items:center; width:36px; height:36px; border-radius:50%; border:2px solid rgba(255,255,255,.92); color:#fff; font-size:20px}
 
 /* Contact CTA */
 /* Home contact overrides to match reference */
