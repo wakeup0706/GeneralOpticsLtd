@@ -31,39 +31,51 @@ body{
 /* Header: facility page now uses the shared news header; no overrides here */
 
 /* Breadcrumb */
-.breadcrumb{font-size:12px;color:#7a8792;background:transparent;padding:10px 0}
+.breadcrumb{font-size:12px;color:#7a8792;background:transparent;padding:10px 0 10px 24px}
 .breadcrumb .sep{margin:0 6px;opacity:.5}
 .breadcrumb a{color:inherit}
 
 /* Title block */
-.page-hero{padding:18px 0 8px;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,0.65) 100%)}
+.page-hero{padding:18px 0 8px 24px;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,0.65) 100%)}
+.facility-hero{position:relative}
+.facility-hero::before{content:"";position:absolute;inset:0 0 auto 0;height:200px;pointer-events:none;background:
+  linear-gradient(135deg, rgba(21,73,148,0.06) 8%, rgba(255,255,255,0.3) 45%, rgba(255,255,255,0.85) 80%, #fff 100%)}
 .eyebrow{font-size:32px;letter-spacing:.12em;margin:0 0 6px;color:var(--main);font-weight:800}
 .subtitle{margin:0;color:#6b7680;position:relative;padding-left:16px}
 .subtitle::before{content:'\2022';position:absolute;left:0;top:0;color:var(--main)}
 .section-rule{border:0;border-top:1px solid var(--rule);margin:12px 0 32px}
 
 /* Image sections */
-.image-section{padding:14px 0 8px}
-.section-title{font-size:14px;margin:0 0 16px;color:#2b3a48;position:relative;padding-left:12px}
-.section-title::before{content:'';position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--main)}
-.image-row{display:grid;gap:16px}
+.image-section{padding:18px 0 10px}
+/* subtle divider like the reference */
+.image-section > .container{border-top:1px solid #dfe3ee;padding-top:12px}
+.section-title{font-size:13px;margin:0 0 10px;color:var(--main);font-weight:700;letter-spacing:.02em}
+.section-title::before{content:none}
+.image-row{display:grid;gap:20px}
 .image-row.one{grid-template-columns:repeat(1, 220px)}
 .image-row.two{grid-template-columns:repeat(2, 220px)}
 .image-row.three{grid-template-columns:repeat(3, 220px)}
 .image-row.four{grid-template-columns:repeat(4, 220px)}
 .image-row figure{margin:0}
 .image-row img{display:block;width:220px;height:150px;object-fit:cover;border-radius:4px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
-.image-row figcaption{font-size:11px;color:#6d7680;margin-top:6px;text-align:center}
+.image-row figcaption{font-size:11px;color:#6b7680;margin-top:6px;text-align:center}
 
 /* Specs card */
 .specs-card{padding:30px 0}
-.card{background:var(--card);border-radius:6px;box-shadow:0 12px 28px rgba(21,73,148,.08);padding:24px 24px}
+.card-title{font-size:14px;color:var(--main);font-weight:700;margin:0 0 14px 2px;letter-spacing:.02em}
+.card{background:var(--card);border-radius:6px;box-shadow:0 18px 36px rgba(21,73,148,.10);padding:26px 26px}
 .spec-block + .spec-block{margin-top:18px}
 .bar{margin:0 0 12px;background:var(--main);color:#fff;padding:10px 14px;border-radius:3px;font-size:14px;letter-spacing:.04em}
 .spec-body{padding:0 12px 6px}
 .spec-body ul{margin:0;padding-left:18px}
 .spec-body li{margin:4px 0}
 .spec-body.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+/* two-column layout for I section */
+.spec-columns{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.subhead{font-size:13px;color:#2b3a48;margin:0 0 6px;font-weight:700}
+.subhead .alpha{display:inline-block;width:1.6em;color:#6a7783}
+.spec-list{margin:0 0 10px 0;padding-left:18px}
+.spec-list li{font-size:12px;color:#54616d;line-height:1.9}
 
 /* Contact section is fully styled in news.css */
 

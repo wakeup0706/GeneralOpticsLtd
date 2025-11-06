@@ -7,7 +7,7 @@
 }
 
 /* Breadcrumb (override) */
-.breadcrumb{font-size:12px;color:#7f8da3;padding:10px 0}
+.breadcrumb{font-size:12px;color:#7f8da3;padding:10px 0 10px 24px}
 .breadcrumb a{color:#7f8da3;text-decoration:none}
 .breadcrumb a:hover{color:#5f7392}
 
@@ -15,7 +15,7 @@
 .contact-hero{position:relative;overflow:hidden;background:transparent}
 .contact-hero::before{content:"";position:absolute;left:-10%;top:-140px;width:140%;height:230px;background:linear-gradient(135deg, rgba(210,225,244,.65) 0%, rgba(255,255,255,.92) 70%);transform:rotate(8deg);}
 .contact-hero::after{content:"";position:absolute;right:-12%;top:40px;width:140%;height:230px;background:linear-gradient(315deg, rgba(210,225,244,.55) 0%, rgba(255,255,255,.95) 70%);transform:rotate(-8deg)}
-.contact-header{position:relative;z-index:1;padding:28px 0 0}
+.contact-header{position:relative;z-index:1;padding:28px 0 0 24px}
 .contact-title{font-size:52px;color:var(--main);font-weight:700;letter-spacing:2px}
 .contact-sub{font-size:18px;color:var(--main);font-weight:600;margin-top:6px}
 .contact-underline{height:1px;width:100%;background:linear-gradient(to right, var(--main) 18%, #dbe3ee 82%);margin:22px 0 36px}

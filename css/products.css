@@ -1,227 +1,84 @@
 /* Products Page Specific Styles */
-body {
-    background-color: #F2F3F4;
-}
+body { background-color: #F2F3F4; }
 
-.breadcrumb {
-    padding: 15px 0;
-    background-color: #FFF;
-    border-bottom: 1px solid #EEE;
-    font-size: 14px;
-    color: #444C55;
-}
+/* Breadcrumb to match facility/news */
+.breadcrumb{font-size:12px;color:#7a8792;background:transparent;padding:10px 0 10px 24px}
+.breadcrumb a{color:inherit;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
 
-.breadcrumb a {
-    color: #154994;
-    text-decoration: none;
-}
 
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
+.products-section { padding: 60px 0; background-image: linear-gradient(to bottom, #FFFFFF, #F2F3F4); }
 
-.products-section {
-    padding: 60px 0;
-    text-align: center;
-    background-image: linear-gradient(to bottom, #FFFFFF, #F2F3F4);
-}
+.products-section .container{padding-left:24px}
 
-.section-title {
-    font-size: 48px;
-    color: #154994;
-    font-weight: bold;
-    margin: 0;
-}
-
-.section-subtitle {
-    font-size: 24px;
-    color: #154994;
-    margin: 0 0 40px;
-    position: relative;
-    display: inline-block;
-}
-
-.section-subtitle::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background-color: #218CD9;
-    border-radius: 50%;
-    position: absolute;
-    left: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
+/* old local headings removed; hero uses shared .news-title-text and underline-blue */
 
 .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 44px 36px; /* row, column */
     margin-top: 40px;
 }
 
 .product-item {
-    background-color: #FFFFFF;
-    border: 1px solid #E0E0E0;
-    padding: 20px;
+    background: transparent; /* no white card */
+    border: 0;
+    padding: 0;
     text-align: left;
-    transition: border-color 0.3s;
 }
 
-.product-item:hover {
-    border-color: #218CD9;
-}
+.product-item:hover .product-image { transform: translateY(-1px); }
 
 .product-image {
-    background-color: #F2F3F4;
-    margin-bottom: 15px;
-    padding: 20px;
-    border: 1px solid #E0E0E0;
+        position:relative;
+        background:#FFFFFF; /* framed image */
+        margin-bottom: 12px;
+        padding: 14px;
+        border:0;
+        border-radius:4px;
+        transition: transform .2s ease;
+}
+
+/* Solid blue offset plate like the reference */
+.product-image::after{
+    content:"";
+    position:absolute;
+    right:-12px; bottom:-12px;
+    width:100%; height:100%;
+    background:#bcd0e8; /* muted blue plate */
+    border-radius:4px;
+    z-index:-1;
 }
 
 .product-image img {
     width: 100%;
+    height: auto;
     display: block;
 }
 
 .product-name {
-    font-size: 18px;
-    color: #154994;
-    font-weight: bold;
-    margin: 0 0 10px;
+        font-size: 16px;
+        color: #154994;
+        font-weight: 700;
+        margin: 4px 0 10px;
+}
+
+/* Thin divider under product name */
+.product-name::after{
+    content:"";
+    display:block;
+    height:1px;
+    background:#c8d5e8;
+    margin-top:10px;
 }
 
 .product-description {
-    font-size: 14px;
-    color: #444C55;
-    line-height: 1.6;
+    font-size: 13px;
+    color: #6b7680;
+    line-height: 1.9;
 }
 
-.contact-section {
-    padding: 60px 0;
-    background-color: #F2F3F4;
-    text-align: center;
-}
-
-.contact-subtitle {
-    font-size: 18px;
-    color: #444C55;
-    margin: 0;
-    position: relative;
-    display: inline-block;
-    padding-left: 20px;
-}
-
-.contact-subtitle::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background-color: #218CD9;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-
-.contact-title {
-    text-align: center;
-    font-size: 48px;
-    color: #154994;
-    font-weight: bold;
-    margin: 10px 0 30px;
-}
-
-.contact-box {
-    background-color: #FFFFFF;
-    padding: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.contact-box p {
-    font-size: 16px;
-    color: #444C55;
-    margin-bottom: 30px;
-}
-
-.contact-options {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 20px;
-}
-
-.email-btn {
-    background-color: #154994;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #FFFFFF;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 30px;
-    font-size: 20px;
-    flex: 1;
-    transition: background-color 0.3s;
-    position: relative;
-}
-
-.email-btn:hover {
-    background-color: #0D3A7A;
-}
-
-.email-btn span {
-    display: flex;
-    align-items: center;
-}
-
-.mail-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 15px;
-}
-
-.arrow {
-    width: 12px;
-    height: 12px;
-    border-top: 3px solid white;
-    border-right: 3px solid white;
-    transform: rotate(45deg);
-    margin-left: 60px;
-}
-
-.phone-contact {
-    background-color: #EAF4FB;
-    color: #154994;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 10px;
-    padding: 20px;
-    border: 1px solid #218CD9;
-}
-
-.phone-contact p {
-    margin: 0;
-    color: #154994;
-}
-
-.phone-number {
-    font-size: 36px;
-    font-weight: bold;
-    margin: 5px 0;
-}
-
-.phone-hours {
-    font-size: 14px;
-}
+/* Remove page-specific contact styles to use shared NEWS/contact styles */
 
 .to-top {
     position: fixed;
@@ -272,72 +129,10 @@ body {
     border-color: #FFFFFF;
 }
 
-/* Footer adjustments */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-}
+/* PRODUCTS hero diagonal light band */
+.products-hero{position:relative}
+.products-hero::before{content:"";position:absolute;inset:0 0 auto 0;height:200px;pointer-events:none;background:
+    linear-gradient(135deg, rgba(21,73,148,0.06) 8%, rgba(255,255,255,0.3) 45%, rgba(255,255,255,0.85) 80%, #fff 100%)}
 
-main {
-    flex-grow: 1;
-}
-
-.site-footer {
-    background-color: #154994;
-    color: #FFFFFF;
-}
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 0;
-}
-.company-info .footer-logo {
-    width: 120px;
-    margin-bottom: 20px;
-}
-.company-info p {
-    margin: 8px 0;
-    font-size: 14px;
-}
-.footer-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 20px 40px;
-    max-width: 600px;
-}
-.footer-nav a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 16px;
-}
-.copyright-bar {
-    background-color: #0D3A7A;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-}
-.copyright-bar p {
-    margin: 0;
-    font-size: 12px;
-}
-.privacy-policy {
-    position: absolute;
-    left: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 14px;
-}
-.privacy-policy::after {
-    content: ' \2794'; /* Unicode arrow */
-    font-size: 12px;
-    margin-left: 5px;
-}
+/* IMPORTANT: Do NOT override shared footer styles here.
+   Footer visuals come from css/news.css and css/main.css for consistency. */

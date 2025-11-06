@@ -176,7 +176,7 @@ ul {
 
 /* Breadcrumb */
 .breadcrumb {
-    padding: 15px 0 10px;
+    padding: 15px 0 10px 24px;
     font-size: 12px;
     color: #999;
 }
@@ -196,12 +196,12 @@ ul {
 }
 
 .news-header {
-    padding: 30px 0 0;
+    padding: 30px 0 0 24px;
 }
 
 .news-title-text {
     font-size: 52px;
-    color: var(--color-text-dark);
+    color: var(--color-main);
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -216,7 +216,7 @@ ul {
 .underline-blue {
     height: 1px;
     width: 100%;
-    background: linear-gradient(to right, var(--color-main) 15%, #ddd 85%);
+    background: linear-gradient(to right, var(--color-main) 15%, #dbe3ee 85%);
     margin: 25px 0 50px;
 }
 
@@ -234,23 +234,24 @@ ul {
     width: 100%;
     height: 100%;
     z-index: 1;
-    pointer-events: none;
-    background: 
-        linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 1) 100%),
-    radial-gradient(circle at 95% 10%, rgba(33, 140, 217, 0.08) 0%, rgba(139, 230, 247, 0.03) 30%, transparent 50%);
+        pointer-events: none;
+        /* Subtle diagonal light bands without adding an opaque white panel */
+        background:
+            linear-gradient(135deg, rgba(21,73,148,0.05) 8%, rgba(255,255,255,0.25) 35%, rgba(255,255,255,0.35) 55%, rgba(255,255,255,0.25) 80%),
+            radial-gradient(540px 300px at 95% 8%, rgba(33,140,217,.08), transparent 70%);
 }
 
 .news-list {
     position: relative;
     z-index: 2;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: transparent; /* Items float on the background (no white card) */
 }
 
 .news-item {
     display: flex;
     align-items: center;
     padding: 18px 0;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid #cfe2f6; /* thin blue-tinted divider like the reference */
     transition: background-color 0.2s;
 }
 
@@ -259,7 +260,7 @@ ul {
 }
 
 .news-date {
-    font-size: 14px;
+    font-size: 12px;
     color: #888;
     min-width: 120px;
     padding-left: 25px;
@@ -268,7 +269,7 @@ ul {
 
 .news-title {
     flex-grow: 1;
-    font-size: 15px;
+    font-size: 13px;
     color: var(--color-text-dark);
     padding: 0 25px;
     line-height: 1.6;
@@ -278,18 +279,19 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
-    border: 2px solid #ddd;
+    width: 34px;
+    height: 34px;
+    border: 2px solid #aac3e5;
     border-radius: 50%;
     margin-right: 25px;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow .3s;
     flex-shrink: 0;
 }
 
 .news-link:hover {
     background-color: var(--color-main);
     border-color: var(--color-main);
+    box-shadow: 0 6px 16px rgba(21,73,148,.2);
 }
 
 .news-link:hover .arrow-icon {
@@ -297,7 +299,7 @@ ul {
 }
 
 .arrow-icon {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--color-main);
     line-height: 1;
     display: block;
@@ -311,22 +313,23 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
-    gap: 8px;
+    padding: 36px 0 60px;
+    gap: 12px;
 }
 
 .page-link {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #ddd;
+    border: 1px solid #cbd7ea;
     border-radius: 50%;
     font-size: 14px;
     color: var(--color-text-dark);
-    background-color: var(--color-white);
+    background-color: #fff;
     transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(21,73,148,.08);
 }
 
 .page-link:hover {
@@ -335,15 +338,31 @@ ul {
 }
 
 .page-link.active {
-    background-color: var(--color-main);
-    color: var(--color-white);
-    border-color: var(--color-main);
+    background: linear-gradient(180deg,#1d56a5 0%, #103e86 100%);
+    color: #fff;
+    border-color: #184a96;
+    box-shadow: 0 8px 18px rgba(21,73,148,.22);
 }
+
+/* Prev/Next chevrons without circles */
+.page-link[aria-label] {
+    width: auto;
+    height: auto;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    font-size: 18px;
+    color: var(--color-main);
+    opacity: .6;
+    border-radius: 0;
+}
+.page-link[aria-label]:hover { opacity: 1; }
+
 
 /* Contact Section */
 .contact-section {
     padding: 80px 0 120px;
-    background: linear-gradient(135deg, #e8f0f8 0%, #f5f8fb 100%);
+    background: linear-gradient(135deg, #eaf2fb 0%, #f6f9fd 100%);
     position: relative;
     overflow: hidden;
 }
@@ -361,10 +380,10 @@ ul {
 }
 
 .contact-card {
-    background-color: var(--color-white);
+    background-color: #fff;
     border-radius: 12px;
-    padding: 50px 60px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    padding: 48px 56px;
+    box-shadow: 0 18px 36px rgba(21,73,148,.15), 0 2px 6px rgba(0,0,0,.06);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -374,19 +393,9 @@ ul {
     z-index: 5;
 }
 
-.contact-header-text {
-    font-size: 14px;
-    color: var(--color-text-blue);
-    font-weight: 500;
-}
+.contact-header-text{font-size:14px;color:var(--color-main);font-weight:700}
 
-.contact-card h2 {
-    font-size: 40px;
-    color: var(--color-accent);
-    font-weight: 700;
-    margin: 5px 0 15px;
-    letter-spacing: 2px;
-}
+.contact-card h2{font-size:44px;color:var(--color-main);font-weight:800;margin:8px 0 22px;letter-spacing:2px}
 
 .contact-card-content p {
     font-size: 14px;
@@ -394,45 +403,33 @@ ul {
     line-height: 1.8;
 }
 
-.contact-buttons {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
+.contact-buttons{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
 
 .email-btn {
-    background-color: var(--color-main);
-    color: var(--color-white);
-    padding: 16px 30px;
-    border-radius: 30px;
+    background: linear-gradient(180deg,#1d56a5 0%, #103e86 100%);
+    color: #fff;
+    padding: 18px 34px;
+    border-radius: 999px;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 700;
     white-space: nowrap;
-    transition: all 0.3s;
+    transition: all 0.25s ease;
     display: flex;
     align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(21, 73, 148, 0.2);
+    gap: 12px;
+    box-shadow: 0 12px 24px rgba(16,62,134,.25), 0 0 0 3px rgba(158,180,206,.65), 0 0 0 6px rgba(16,62,134,.08);
 }
 
 .email-btn:hover {
-    background-color: #0d3870;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(21, 73, 148, 0.3);
+    filter: none;
+    background: linear-gradient(180deg,#2261b5 0%, #114991 100%);
 }
 
-.email-icon {
-    font-size: 18px;
-}
+.email-icon { font-size: 18px; }
 
-.arrow-icon-small {
-    font-size: 16px;
-    margin-left: 5px;
-}
+.arrow-icon-small{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#fff;color:var(--color-main);font-size:18px;margin-left:10px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
 
-.phone-info {
-    text-align: center;
-}
+.phone-info{width:100%}
 
 .phone-text {
     font-size: 13px;
@@ -440,30 +437,15 @@ ul {
     margin-bottom: 8px;
 }
 
-.phone-number-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background-color: #E5F2FB;
-    color: var(--color-main);
-    font-size: 26px;
-    font-weight: 700;
-    padding: 12px 25px;
-    border-radius: 8px;
-    border: 2px solid #b3d9ff;
-    margin-bottom: 5px;
-    transition: all 0.3s;
-}
+.phone-number-btn{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,#e9f4ff 0%, #d7e9fb 100%);color:var(--color-main);padding:12px 20px 12px 16px;border-radius:999px;border:2px solid #b7d5fb;transition:all .25s ease;box-shadow:inset 0 -4px 8px rgba(21,73,148,.08)}
+.phone-number-btn:hover{background:linear-gradient(180deg,#f2f8ff 0%, #e3effc 100%);border-color:#9cc6fa}
 
-.phone-number-btn:hover {
-    background-color: #d0e8f7;
-    border-color: var(--color-accent);
-}
-
-.phone-icon {
-    font-size: 20px;
-}
+.phone-icon{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#cfe4fb}
+.phone-icon svg{width:22px;height:22px;fill:#154994;display:block}
+.phone-lines{display:flex;flex-direction:column;line-height:1.1}
+.phone-label{font-size:12px;color:#2b65ad;font-weight:700}
+.phone-number{font-size:28px;font-weight:800;letter-spacing:.5px;color:#154994;margin:2px 0}
+.phone-hours{font-size:12px;color:#3a4a5a;opacity:.8}
 
 .phone-hours {
     font-size: 12px;

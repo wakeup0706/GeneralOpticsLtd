@@ -10,6 +10,9 @@
     background: linear-gradient(180deg, rgba(34,86,142,0.06) 0%, rgba(255,255,255,0) 100%);
     padding:48px 0 36px;
 }
+/* Align breadcrumb and hero container slightly to the right (match header spacing) */
+.breadcrumb{padding-left:-1000px}
+.privacy-hero > .container{padding-left:24px}
 .privacy-title-en{
     font-family: 'Zen Kaku Gothic New', sans-serif;
     color:var(--main);
