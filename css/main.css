@@ -28,7 +28,8 @@ body {
     align-items: center;
     padding: 15px 0;
     /* reserve space for the absolutely positioned recruit button */
-    padding-right: 160px;
+    /* reduced from 160px to bring the nav closer to the recruit button */
+    padding-right: 90px;
 }
 
 /* Logo block flush-left of the page (outside centered container) */
@@ -84,6 +85,37 @@ body {
     transition: background-color 0.3s ease;
 }
 .recruit-btn:hover { background-color: #154994; }
+
+/* -------- Mobile Navigation (home page only) -------- */
+/* Base button (hidden on desktop) */
+.hamburger{display:none}
+.hamburger{position:relative; width:48px; height:48px; border-radius:50%; border:2px solid #154994; background:#fff; color:#154994; display:inline-flex; align-items:center; justify-content:center; margin-left:10px}
+.hamburger .bar, .hamburger .bar::before, .hamburger .bar::after{content:""; display:block; width:20px; height:2px; background:#154994; position:absolute; transition:.2s ease}
+.hamburger .bar{transform:translateY(0)}
+.hamburger .bar::before{transform:translateY(-6px)}
+.hamburger .bar::after{transform:translateY(6px)}
+.hamburger.is-open .bar{background:transparent}
+.hamburger.is-open .bar::before{transform:rotate(45deg)}
+.hamburger.is-open .bar::after{transform:rotate(-45deg)}
+
+/* Fullscreen overlay menu */
+.mobile-menu{position:fixed; inset:0; background:linear-gradient(180deg,#154994 0%, #2061B3 100%); z-index:60; display:none}
+.mobile-menu .mobile-menu-inner{padding:76px 18px 22px}
+.mobile-menu ul{list-style:none; margin:0; padding:0}
+.mobile-menu li{padding:18px 8px; position:relative}
+.mobile-menu li+li{border-top:1px solid rgba(255,255,255,.35)}
+.mobile-menu a{color:#fff; text-decoration:none; display:block; text-align:center; font-weight:800; font-size:20px; letter-spacing:.06em}
+.mobile-menu .mobile-cta{display:block; margin:24px auto 0; max-width:320px; text-align:center; color:#154994; background:#fff; border-radius:999px; padding:14px 22px; font-weight:800; position:relative}
+.mobile-menu .mobile-cta .arrow{position:absolute; right:16px; display:inline-grid; place-items:center; width:28px; height:28px; border-radius:50%; border:2px solid #c7d6ef}
+
+/* Only enable mobile nav on the home page and small screens */
+@media (max-width: 768px){
+    body#top .top-nav{display:none}
+    body#top .recruit-btn{display:none}
+    body#top .hamburger{display:inline-flex}
+    body.menu-open{overflow:hidden}
+    body.menu-open #mobile-menu{display:block}
+}
 
 /* Hero Section */
 .hero-section {

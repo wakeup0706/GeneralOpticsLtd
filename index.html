@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/news.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/main.css">
+  
 </head>
 <body id="top">
   <!-- Global Header -->
@@ -48,113 +49,132 @@
           <p class="sub">このあたりにテキストが入ります。ここにこのあたりにテキストが入ります。<br>このあたりにテキストが入ります。</p>
         </div>
       </div>
-      <a href="#intro" class="scroll-cue" aria-label="スクロール">
+      <a href="#images-with-text" class="scroll-cue" aria-label="スクロール">
         <span>Scroll</span>
         <span class="down">↓</span>
       </a>
     </section>
 
-    <!-- Intro wave (before PRODUCTS): curved blue shape, small photos, vertical copy) -->
-    <section id="intro" class="intro-wave" aria-label="Introduction">
-      <div class="wave-bg" aria-hidden="true"></div>
-      <div class="container wave-inner">
-        <!-- Small square (factory machine) near top-left edge of the blue wave -->
-        <figure class="thumb t1"><img src="images/topparts_1.jpg" alt="工場設備（機械）"></figure>
-        <!-- Large rectangle (factory floor) within blue wave -->
-        <figure class="thumb t2"><img src="images/facility2.jpg" alt="工場フロア"></figure>
-        <!-- Small rectangle (measuring equipment) -->
-        <figure class="thumb t3"><img src="images/facility4.jpg" alt="計測機器"></figure>
-        <!-- Small square (lens in hand) outside blue area, top-right -->
-        <figure class="thumb t4"><img src="images/topparts_4.jpg" alt="レンズ計測"></figure>
-        <!-- Central metallic disc on the boundary -->
-        <figure class="disc"><img src="images/topparts_5.png" alt="金属ディスク"></figure>
-        <p class="vertical-copy">光学結晶と薄膜技術の<br>プロフェッショナルとして、<br>光技術の最前線を切り拓きます</p>
-      </div>
+    <!-- Images with text section (replacing Intro wave) -->
+    <section id="images-with-text" aria-label="Introduction visual">
+      <img class="bg-2" src="General Optics_files/bg-2.png" alt="背景の抽象図形">
+      <img class="text-image" src="General Optics_files/text.png" alt="光学結晶と薄膜技術のコピー">
+      <img class="machine-01" src="General Optics_files/machine-01.png" alt="レンズ加工機">
+      <img class="haruchika-polishing-machine" src="General Optics_files/haruchika-polishing-machine.png" alt="研磨機">
+      <img class="automatic-deposition-machine" src="General Optics_files/automatic-deposition-machine.png" alt="自動成膜装置">
+      <img class="holding-lens" src="General Optics_files/holding-lens.png" alt="レンズを持つ手元の写真">
+      <img class="spinner" src="General Optics_files/spinner.png" alt="回転する部品の画像">
     </section>
 
-    <!-- PRODUCTS -->
-    <section id="products" class="products-block" role="region" aria-labelledby="products-title">
-      <div class="container">
-        <div class="products-card">
-          <div class="section-hd">
-            <span class="dot" aria-hidden="true">●</span>
-            <div>
-              <p class="ja">製品案内</p>
-              <p class="en" id="products-title">PRODUCTS</p>
-            </div>
+    <!-- PRODUCTS (imported from reference layout) -->
+    <section id="products">
+      <div class="section-heading">
+        <ul>
+          <li class="black">製品案内</li>
+        </ul>
+        <h2><strong>Products</strong></h2>
+      </div>
+      <div class="separator-line"></div>
+      <div class="products-grid">
+        <div class="product-item">
+          <img src="General Optics_files/two-lenses.png" alt="レンズ製品画像1">
+          <h3>ここに製品名が入ります</h3>
+        </div>
+        <div class="product-item">
+          <img src="General Optics_files/two-lenses.png" alt="レンズ製品画像2">
+          <h3>ここに製品名が入ります</h3>
+        </div>
+        <div class="product-item">
+          <img src="General Optics_files/two-lenses.png" alt="レンズ製品画像3">
+          <h3>ここに製品名が入ります</h3>
+        </div>
+        <div class="product-item">
+          <img src="General Optics_files/two-lenses.png" alt="レンズ製品画像4">
+          <h3>ここに製品名が入ります</h3>
+        </div>
+        <div class="product-item">
+          <img src="General Optics_files/two-lenses.png" alt="レンズ製品画像5">
+          <h3>ここに製品名が入ります</h3>
+        </div>
+        <div class="product-item">
+          <img src="General Optics_files/two-lenses.png" alt="レンズ製品画像6">
+          <h3>ここに製品名が入ります</h3>
+        </div>
+      </div>
+      <a class="site-button margin-auto" href="products.html">
+        <div class="inner">
+          <span>製品案内へ</span>
+          <img src="General Optics_files/arrow-right.png" alt="右矢印">
+        </div>
+      </a>
+    </section>
+
+    <!-- ABOUT section (facility & company cards replacement) -->
+    <section id="about">
+      <img class="many-lenses" src="General Optics_files/many-lenses.png" alt="多数のレンズ背景">
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="section-heading white">
+            <ul>
+              <li>製品案内</li>
+            </ul>
+            <h2>Products</h2>
           </div>
-          <div class="products-grid">
-          <!-- 6 placeholders -->
-          <a class="product" href="products.html">
-            <img src="images/products_dummy.jpg" alt="製品イメージ" loading="lazy">
-            <p>ここに製品名が入ります</p>
-          </a>
-          <a class="product" href="products.html">
-            <img src="images/products_dummy.jpg" alt="製品イメージ" loading="lazy">
-            <p>ここに製品名が入ります</p>
-          </a>
-          <a class="product" href="products.html">
-            <img src="images/products_dummy.jpg" alt="製品イメージ" loading="lazy">
-            <p>ここに製品名が入ります</p>
-          </a>
-          <a class="product" href="products.html">
-            <img src="images/products_dummy.jpg" alt="製品イメージ" loading="lazy">
-            <p>ここに製品名が入ります</p>
-          </a>
-          <a class="product" href="products.html">
-            <img src="images/products_dummy.jpg" alt="製品イメージ" loading="lazy">
-            <p>ここに製品名が入ります</p>
-          </a>
-          <a class="product" href="products.html">
-            <img src="images/products_dummy.jpg" alt="製品イメージ" loading="lazy">
-            <p>ここに製品名が入ります</p>
-          </a>
+          <div class="about-card-lower">
+            <p>最新設備を揃え、お客様の<br>課題や要望にお応えいたします。</p>
+            <a class="about-card-button" href="products.html">
+              <div class="inner">
+                <img src="General Optics_files/arrow-right-blue.png" alt="右矢印アイコン">
+              </div>
+            </a>
           </div>
-          <div class="section-cta">
-            <a class="pill" href="products.html" aria-label="製品案内ページへ">製品案内へ <span class="arrow">→</span></a>
+          <img class="about-bg" src="General Optics_files/lens-factory-machines.png" alt="工場設備背景">
+          <div class="about-bg-image-gradient"></div>
+          <div class="bg-gradient"></div>
+        </div>
+        <div class="about-card">
+          <div class="section-heading white">
+            <ul>
+              <li>会社案内</li>
+            </ul>
+            <h2>COMPANY</h2>
           </div>
+          <div class="about-card-lower">
+            <p>最高「品質」の実現を<br>追求しております</p>
+            <a class="about-card-button" href="about.html">
+              <div class="inner">
+                <img src="General Optics_files/arrow-right-blue.png" alt="右矢印アイコン">
+              </div>
+            </a>
+          </div>
+          <img class="about-bg" src="General Optics_files/lens-factory-machines.png" alt="工場設備背景">
+          <div class="about-bg-image-gradient"></div>
+          <div class="bg-gradient"></div>
         </div>
       </div>
     </section>
 
-    <!-- Decorative rings strip (background like reference) -->
-    <section class="decor-rings" aria-hidden="true"></section>
-
-    <!-- FACILITY & COMPANY cards -->
-    <section class="duo-cards">
-      <div class="container duo">
-        <a href="facility.html" class="card blue">
-          <div class="card-body">
-            <p class="en">FACILITY</p>
-            <p class="ja">▶ 主要設備</p>
-            <p class="desc">最新設備で行う、技術力の粋。設備情報をお届けします。</p>
-          </div>
-          <span class="circle-arrow" aria-hidden="true">→</span>
-        </a>
-        <a href="about.html" class="card navy">
-          <div class="card-body">
-            <p class="en">COMPANY</p>
-            <p class="ja">▶ 会社案内</p>
-            <p class="desc">私たちの想い・創業の歴史・会社概要をご紹介します。</p>
-          </div>
-          <span class="circle-arrow" aria-hidden="true">→</span>
-        </a>
+    <!-- JOIN US (rewritten to match design) -->
+    <section id="join-us" aria-label="Recruit">
+      <div class="join-visual">
+        <img src="General Optics_files/people.png" alt="社内メンバー" class="join-photo">
       </div>
-    </section>
-
-    <!-- Recruit banner (after FACILITY/COMPANY cards) like reference -->
-    <section class="recruit-banner">
-      <div class="container recruit-wrap">
-        <div class="recruit-img"><img src="images/top-recruit.jpg" alt="採用イメージ"></div>
-        <div class="recruit-card">
-          <p class="kicker">▶ 採用情報</p>
-          <h3 class="title">RECRUIT</h3>
-          <p class="desc">私たちと一緒に、未来の光学をつくりませんか。<br>地域に根ざしながら、先端の挑戦を続ける仲間を募集しています。</p>
-          <a class="cta" href="recruit.html">採用情報はこちら <span class="arrow">→</span></a>
-          <!-- Handwritten decoration placed relative to the whole block to avoid overlapping text -->
-          <img src="images/kv-parts.png" alt="Let's Join Us!" class="handwrite-img" aria-hidden="true">
-        </div>
+      <div class="join-card" role="region" aria-label="採用情報">
+        <p class="join-kicker">● 採用情報</p>
+        <h3 class="join-title">RECRUIT</h3>
+        <p class="join-desc">
+          私たちと一緒に、未来をつくりませんか。<br>
+          ゼネラルオプティックスでは、<br>
+          事業の成長を共に推進してくださる新しい仲間を募集しています。<br>
+          ご興味のある方は、ぜひ詳細をご覧ください。
+        </p>
+        <a class="join-cta" href="recruit.html" aria-label="採用情報はこちら">
+          採用情報はこちら
+          <span class="arrow">→</span>
+        </a>
+        <img src="General Optics_files/blue-bg-blur.png" alt="" class="join-card-bg" aria-hidden="true">
       </div>
+      <img src="General Optics_files/lets-join-is.png" alt="Let's Join Us!" class="join-handwrite">
     </section>
 
     <!-- NEWS (home, redesigned to match reference) -->

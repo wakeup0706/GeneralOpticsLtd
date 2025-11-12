@@ -24,9 +24,9 @@ img{max-width:100%; display:block}
 .hero-img{width:100%; height:clamp(420px, 58vw, 640px); object-fit:cover; display:block; position:relative; z-index:0; border-radius:8px}
 
 /* Caption positioned to land between faded area and visible image */
-.hero-caption{position:absolute; left:-12%; top:clamp(22px, 9vw, 80px); color:#fff; text-shadow:0 8px 24px rgba(0,0,0,.45); z-index:2; max-width:min(480px, 42%)}
-.hero-caption .lead{margin:.2rem 0; font-size:clamp(22px, 4.2vw, 32px); font-weight:700; line-height:1.2}
-.hero-caption .sub{opacity:.95; font-size:clamp(12px, 1.9vw, 14px)}
+.hero-caption{position:absolute; left:-12%; /* moved further down for visual balance */ top:clamp(56px, 12vw, 140px); color:#fff; text-shadow:0 8px 24px rgba(0,0,0,.45); z-index:2; max-width:min(480px, 42%)}
+.hero-caption .lead{margin:.2rem 0; /* slightly larger */ font-size:clamp(26px, 5.2vw, 36px); font-weight:700; line-height:1.2}
+.hero-caption .sub{opacity:.95; /* slightly larger */ font-size:clamp(14px, 2.4vw, 16px)}
 
 /* Scroll cue: white circular button at bottom-right */
 .scroll-cue{position:absolute; right:24px; bottom:20px; width:64px; height:64px; border-radius:50%; background:#fff; color:var(--color-main); display:flex; flex-direction:column; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); border:2px solid rgba(0,0,0,.06); z-index:3}
@@ -74,20 +74,34 @@ img{max-width:100%; display:block}
 .products-block{position:relative; padding:56px 0 24px; background:linear-gradient(180deg, #eef4fb 0%, #ffffff 70%)}
 .products-card{position:relative; z-index:2; background:#fff; border-radius:12px; box-shadow:0 24px 48px rgba(17,58,119,.14); padding:22px 26px 26px; width:min(1120px, 94%); margin:0 auto}
 .products-card .section-hd{margin-bottom:10px; border-bottom:1px solid #e6eef8; padding-bottom:8px}
-.products-card .section-hd .en{font-size:26px; color:var(--color-text-blue)}
+.products-card .section-hd .en{font-size:56px; font-weight:900; color:#154994}
 .products-card .products-grid{margin-top:16px}
 .products-card .section-cta{margin-top:18px}
-/* Button with round arrow indicator (main blue) */
-.btn.arrow{background:var(--color-main); color:#fff}
+/* Join Us – rewritten to match design exactly */
+section#join-us{position:relative; overflow:hidden; color:#fff; background:linear-gradient(180deg,#f4f7fb 0%, #ffffff 70%)}
 .btn.arrow::after{content:'\2192'; display:inline-grid; place-items:center; width:28px; height:28px; border-radius:50%; border:2px solid rgba(255,255,255,.75); margin-left:10px; font-weight:800}
-.section-hd{display:flex; align-items:flex-start; gap:12px; margin-bottom:20px}
-.section-hd .dot{color:var(--color-accent)}
+/* People background strip */
+#join-us .join-visual{position:relative}
+#join-us .join-photo{width:100%; height:640px; object-fit:cover; object-position:center 12%; display:block; filter:saturate(.96) brightness(1.02)}
+#join-us .join-photo{width:100%; height:640px; object-fit:cover; object-position:center 12%; display:block; filter:saturate(.96) brightness(1.02); position:relative; z-index:1}
 .section-hd .en{font-weight:800; font-size:28px; letter-spacing:.08em; color:var(--color-text-dark)}
-.section-hd .ja{color:#8aa1c1}
-.products-grid{margin-top:24px; display:grid; grid-template-columns:repeat(3, 1fr); gap:22px}
+/* Right-aligned gradient card */
+#join-us .join-card{position:absolute; right:3.8%; top:120px; width:min(880px, 50%); min-height:560px; border-radius:0; box-shadow:0 22px 48px rgba(17,58,119,.28); padding:34px 44px 46px; z-index:3; overflow:hidden; background:transparent}
+#join-us .join-card{position:absolute; right:-1.8%; top:250px; width:min(980px, 50%); min-height:460px; border-radius:0; box-shadow:0 22px 48px rgba(17,58,119,.28); padding:34px 44px 46px; z-index:5; overflow:hidden;
+  /* Solid gradient overlay so card sits ON the photo */
+  background:linear-gradient(180deg,#1a5fb0 0%, #2b79c2 52%, #5ca4d6 100%);
+  backdrop-filter:blur(2px); /* slight glass effect */
+}
+/* remove image-based background; gradient acts as overlay */
+#join-us .join-card-bg{display:none}
+#join-us .join-kicker{margin:0 0 6px; font-size:13px; font-weight:800; letter-spacing:.06em}
+#join-us .join-title{margin:0 0 16px; font-size:40px; font-weight:800; letter-spacing:.04em}
+#join-us .join-desc{margin:0 0 16px; line-height:1.9; opacity:.98}
+#join-us .join-cta{display:inline-flex; align-items:center; gap:12px; background:#fff; color:#154994; font-weight:800; text-decoration:none; border-radius:999px; padding:14px 24px; box-shadow:0 10px 22px rgba(17,58,119,.22), 0 0 0 3px rgba(255,255,255,.85); position:relative}
+#join-us .join-cta .arrow{display:inline-grid; place-items:center; width:28px; height:28px; border-radius:50%; border:2px solid #c7d6ef}
 /* Product tiles match the reference: only the image with a tiny blue offset shadow and a blue caption */
-.products-card .product{display:block; background:transparent; border:0; border-radius:0; padding:0; color:var(--color-text-dark); text-decoration:none}
-.products-card .product img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; background:#f5f8fc; border:1px solid #d8e6f8; box-shadow:-12px 10px 0 0 #c7d6ef}
+/* Handwritten decoration */
+#join-us .join-handwrite{position:absolute; right:4%; bottom:-14px; width:clamp(220px, 27vw, 360px); height:auto; opacity:.98; filter:drop-shadow(0 18px 24px rgba(0,0,0,.2)); z-index:6; pointer-events:none}
 .products-card .product p{margin:.55rem 0 0; font-size:12px; text-align:center; color:var(--color-text-blue); font-weight:700}
 .section-cta{display:flex; justify-content:center; margin-top:18px}
 /* Pill CTA to match screenshot (shared look with NEWS pill, but tuned for products size) */
@@ -103,8 +117,8 @@ img{max-width:100%; display:block}
 .duo-cards{padding:12px 0 8px; position:relative; z-index:2; margin-top:-60px}
 .duo{display:grid; grid-template-columns:1fr 1fr; gap:24px}
 .card{position:relative; border-radius:10px; padding:28px; color:#fff; min-height:140px; text-decoration:none; overflow:hidden; box-shadow:0 18px 40px rgba(17,58,119,.18)}
-.card.blue{background:var(--color-main)}
-.card.navy{background:var(--color-main)}
+.card.blue{background:#154994}
+.card.navy{background:#154994}
 .card .en{font-weight:800; font-size:26px}
 .card .ja{opacity:.9; margin-top:6px}
 .card .desc{opacity:.85; margin-top:8px; font-size:14px}
@@ -190,10 +204,17 @@ img{max-width:100%; display:block}
 /* Responsive */
 @media (max-width: 960px){
   .products-card{width:96%}
+  /* reduce products heading size on medium screens */
+  .products-card .section-hd .en{font-size:40px}
   .products-grid{grid-template-columns:repeat(2,1fr)}
   .duo{grid-template-columns:1fr}
   .cta-card{grid-template-columns:1fr; gap:12px}
   .home-contact .contact-card{grid-template-columns:1fr}
+  /* Join-us responsive */
+  #join-us .join-photo{height:600px}
+  #join-us .join-card{right:4%; top:140px; width:min(620px, 64%); min-height:420px; padding:32px 40px 42px; border-radius:0}
+  #join-us .join-title{font-size:32px}
+  #join-us .join-desc{font-size:14px}
   /* Intro responsiveness */
   .wave-inner{height:360px}
   .wave-bg::after{left:0; right:0; top:0; bottom:0; width:auto; height:100%}
@@ -209,9 +230,13 @@ img{max-width:100%; display:block}
 @media (max-width: 640px){
   .products-block{padding:40px 0 10px}
   .products-card{padding:18px 18px 20px}
-  .products-card .section-hd .en{font-size:22px}
+  /* mobile: keep Products title readable but smaller */
+  .products-card .section-hd .en{font-size:28px}
   .hero-frame{width:94%; margin:0 auto}
   .hero-caption{left:clamp(12px, 4vw, 20px); top:clamp(16px, 7vw, 48px); max-width:86%}
+
+  /* mobile: move the caption lower so the hero text isn't crowded at the top */
+  .hero-caption{left:clamp(12px, 4vw, 20px); top:clamp(28px, 9vw, 72px); max-width:86%}
   .hero-img{height: clamp(300px, 70vw, 460px)}
   .scroll-cue{right:16px; bottom:14px; width:56px; height:56px}
   /* Intro small screens */
@@ -226,6 +251,12 @@ img{max-width:100%; display:block}
   .disc{left:56%; top:64%; width:160px; height:160px}
   .vertical-copy{right:18%; font-size:14px}
   .products-grid{grid-template-columns:1fr}
+  /* Join-us mobile: center the card and reduce height */
+  #join-us .join-photo{height:520px; object-position:center 22%}
+  #join-us .join-card{position:absolute; left:50%; transform:translateX(-50%); right:auto; top:110px; width:min(94%, 560px); min-height:400px; padding:30px 34px 38px; border-radius:0}
+    #join-us .join-card{position:absolute; left:50%; transform:translateX(-50%); right:auto; top:110px; width:min(94%, 560px); min-height:400px; padding:30px 34px 38px; border-radius:0; background:linear-gradient(180deg,#1a5fb0 0%, #2b79c2 55%, #5ca4d6 100%); backdrop-filter:blur(2px)}
+  #join-us .join-title{font-size:28px}
+  #join-us .join-handwrite{right:5%; bottom:16px; width:clamp(180px, 42vw, 300px); z-index:6}
 }
 
 /* Decorative rings strip between products and duo cards */
@@ -234,3 +265,78 @@ img{max-width:100%; display:block}
   linear-gradient(180deg, rgba(238,244,251,1) 0%, rgba(255,255,255,0.85) 55%, rgba(255,255,255,1) 100%),
   url('../images/topworks_2.jpg') center bottom/cover no-repeat; filter:saturate(.85); z-index:0; pointer-events:none}
 .decor-rings > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1}
+
+/* Images-with-text section (ported from General Optics reference) */
+#images-with-text{width:100%; max-width:1440px; padding:170px 0 178px; display:flex; flex-direction:column; align-items:center; position:relative}
+#images-with-text .bg-2{position:absolute; top:222px; width:100vw; max-width:none; aspect-ratio:1440/878; z-index:-2}
+#images-with-text .text-image{width:170px; aspect-ratio:170/540}
+#images-with-text .machine-01{position:absolute; top:95px; left:16%; width:16%; aspect-ratio:240/160}
+#images-with-text .haruchika-polishing-machine{position:absolute; top:335px; left:0; width:28%; aspect-ratio:400/256}
+#images-with-text .automatic-deposition-machine{position:absolute; top:631px; left:22%; width:14%; aspect-ratio:200/120}
+#images-with-text .holding-lens{position:absolute; top:135px; right:0; width:28%; aspect-ratio:400/256}
+#images-with-text .spinner{position:absolute; top:476px; right:17%; width:21%; aspect-ratio:299/275}
+
+@media (max-width: 960px){
+  #images-with-text{padding:120px 0 140px}
+}
+
+/* === Imported product/about/join-us sections (General Optics reference) === */
+/* Variables subset (names distinct from existing --color-* set) */
+:root{
+  --max-width: 1440px; --sec-width: 89%; --sec-max-width: 1280px;
+  --main-color: #154994; --main-color-30: rgba(21,73,148,.3); --main-color-16: rgba(21,73,148,.16);
+  --accent-color: #218CD9; --accent-color-20: rgba(33,140,217,.2); --accent-color-30: rgba(33,140,217,.3);
+  --light-blue: #8BE6F7; --light-blue-2:#8AB8D9; --dark-blue:#011D45; --white-30:rgba(255,255,255,.3);
+  --shadow-3:0 0 50px rgba(21,73,148,.16);
+  --main-to-dark-blue-150deg-gradient: linear-gradient(150deg, var(--main-color) 40%, var(--dark-blue) 160%);
+}
+
+/* Section heading */
+.section-heading{display:flex; flex-direction:column; align-items:start}
+.section-heading ul{font-weight:700; padding:0; margin:0; list-style:none}
+.section-heading li::before{content:""; display:inline-block; width:12px; aspect-ratio:1/1; border-radius:50%; background:var(--main-color); margin-right:8px}
+.section-heading.white li::before{background:#fff}
+.section-heading h2{text-transform:uppercase; font-weight:800; letter-spacing:.02em}
+.separator-line{width:100%; height:1px; background:var(--main-color)}
+
+/* Products */
+section#products{width:var(--sec-width); max-width:var(--sec-max-width); padding:100px 80px; background:#fff; display:flex; flex-direction:column; gap:40px; color:var(--main-color); box-shadow:var(--shadow-3); margin:0 auto}
+.products-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+.product-item{display:flex; flex-direction:column; align-items:center; gap:20px}
+.product-item img{width:100%; aspect-ratio:352/248; object-fit:contain}
+.site-button{width:300px; max-width:100%; border-radius:1000px; padding:4px; background:var(--main-color-30); color:#fff; font-weight:700}
+.site-button>.inner{width:100%; border-radius:1000px; background:var(--main-to-dark-blue-150deg-gradient); padding:22px; display:flex; align-items:center; justify-content:center; position:relative}
+.site-button img{height:24px; position:absolute; right:20px}
+.site-button.white{background:var(--white-30); color:var(--main-color)}
+.site-button.white>.inner{background:#fff}
+
+/* About */
+section#about{width:100%; max-width:var(--max-width); padding:328px 0 180px; display:flex; flex-direction:column; align-items:center; position:relative; color:#fff}
+/* Show full original lenses image without cropping */
+.many-lenses{width:auto; height:auto; max-width:100%; object-fit:contain; z-index:-2; position:absolute; bottom:250px; left:80%; transform:translateX(-50%)}
+/* Center the two cards grid within the section */
+.about-grid{width:75%; max-width:1080px; display:grid; grid-template-columns:repeat(2,1fr); gap:40px; position:relative; z-index:1; margin:0 auto; left: 15%;}
+.about-card{display:flex; flex-direction:column; align-items:start; padding:42px 40px 54px; gap:50px; overflow:hidden; position:relative; z-index:1}
+.about-card-lower{width:100%; display:flex; align-items:center; justify-content:space-between; gap:10px}
+.about-card-button{width:64px; aspect-ratio:1/1; border-radius:50%; background:var(--white-30); padding:4px; display:flex; align-items:center; justify-content:center; transition:padding .2s ease-in}
+.about-card-button>.inner{width:100%; height:100%; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#fff}
+.about-card-button img{width:24px}
+.about-card-button:hover{padding:0}
+.bg-gradient{position:absolute; inset:0; z-index:-1; background:linear-gradient(135deg, var(--main-color) -10%, var(--dark-blue) 90%); transition:transform .3s ease-out}
+.about-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1}
+.about-bg-image-gradient{position:absolute; inset:0; z-index:-1; opacity:.4; background:linear-gradient(270deg, var(--accent-color), var(--light-blue-2))}
+.about-card:hover .bg-gradient{transform:translateX(-100%)}
+
+/* Responsive for imported sections */
+@media (max-width: 960px){
+  section#products{padding:60px 28px}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{width:90%; grid-template-columns:1fr}
+}
+@media (max-width: 640px){
+  .products-grid{grid-template-columns:1fr}
+  section#about{padding:260px 0 140px}
+}
+
+/* Center the Products section CTA button */
+section#products .site-button{align-self:center; margin-left:auto; margin-right:auto}
